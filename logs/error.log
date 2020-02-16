@@ -1,0 +1,60 @@
+2020/02/06 16:40:20 [error] 7124#7060: *2 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/?"
+2020/02/06 16:44:51 [notice] 4316#3192: signal process started
+2020/02/06 16:46:34 [notice] 11000#7304: signal process started
+2020/02/06 16:47:39 [notice] 11212#7508: signal process started
+2020/02/06 16:48:17 [notice] 11176#11472: signal process started
+2020/02/06 16:49:15 [notice] 6056#1268: signal process started
+2020/02/06 21:16:42 [emerg] 5136#1468: bind() to 138.68.240.218:8080 failed (10049: The requested address is not valid in its context)
+2020/02/06 21:19:35 [notice] 8740#9068: signal process started
+2020/02/06 21:19:35 [error] 8740#9068: OpenEvent("Global\ngx_stop_4584") failed (2: The system cannot find the file specified)
+2020/02/06 21:21:16 [notice] 2128#3460: signal process started
+2020/02/06 21:21:16 [error] 2128#3460: OpenEvent("Global\ngx_stop_4584") failed (2: The system cannot find the file specified)
+2020/02/06 21:21:24 [error] 3436#520: *1 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/02/06 21:23:59 [notice] 1200#5072: signal process started
+2020/02/06 21:25:39 [emerg] 8500#7084: "proxy_pass" directive is not allowed here in C:\proxy_tz/conf/nginx.conf:22
+2020/02/06 21:26:02 [emerg] 2560#5256: "proxy_pass" directive is not allowed here in C:\proxy_tz/conf/nginx.conf:22
+2020/02/07 12:36:39 [error] 9128#10084: *4 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/02/07 12:50:54 [notice] 5456#8540: signal process started
+2020/02/07 15:48:19 [emerg] 7608#8972: invalid URL prefix in C:\proxy_tz/conf/nginx.conf:26
+2020/02/07 15:48:21 [emerg] 9616#1704: invalid URL prefix in C:\proxy_tz/conf/nginx.conf:26
+2020/02/07 18:46:56 [notice] 6828#5536: signal process started
+2020/02/07 18:48:22 [emerg] 8792#904: invalid URL prefix in C:\proxy_tz/conf/nginx.conf:26
+2020/02/07 18:48:24 [emerg] 112#1712: invalid URL prefix in C:\proxy_tz/conf/nginx.conf:26
+2020/02/07 19:01:02 [emerg] 3912#7340: invalid URL prefix in C:\proxy_tz/conf/nginx.conf:32
+2020/02/07 19:01:03 [emerg] 8948#7540: invalid URL prefix in C:\proxy_tz/conf/nginx.conf:32
+2020/02/07 19:34:38 [notice] 7880#1824: signal process started
+2020/02/07 19:35:57 [notice] 828#7388: signal process started
+2020/02/12 14:43:14 [error] 7496#8548: *2 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/02/14 12:27:53 [error] 80#7468: *5 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/02/14 15:37:38 [notice] 3980#3300: signal process started
+2020/02/14 15:39:23 [notice] 1836#6276: signal process started
+2020/02/14 16:36:50 [error] 9724#9772: *124 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=se HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 16:43:17 [error] 9724#9772: *145 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:42:36 [error] 9724#9772: *217 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site= HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:42:39 [error] 9724#9772: *219 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site= HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:42:43 [error] 9724#9772: *221 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site= HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:42:45 [error] 9724#9772: *223 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site= HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:42:57 [error] 9724#9772: *211 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site= HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:43:24 [error] 9724#9772: *215 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site= HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:44:22 [error] 9724#9772: *227 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:44:44 [error] 9724#9772: *229 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:44:51 [notice] 7636#5312: signal process started
+2020/02/14 18:48:00 [error] 7692#9000: *10 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 18:48:08 [error] 7692#9000: *13 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 19:35:05 [notice] 8564#5212: signal process started
+2020/02/14 20:40:33 [notice] 6748#9348: signal process started
+2020/02/14 21:16:20 [error] 6484#4192: *22 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 21:18:51 [error] 6484#4192: *34 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 21:19:10 [notice] 9108#7784: signal process started
+2020/02/14 21:57:43 [error] 2204#6628: *56 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 21:58:35 [error] 2204#6628: *59 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 21:58:47 [notice] 3568#9752: signal process started
+2020/02/14 22:25:46 [error] 6756#8892: *54 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/?"
+2020/02/14 22:38:26 [notice] 4480#3176: signal process started
+2020/02/14 22:55:57 [notice] 7368#1020: signal process started
+2020/02/14 23:03:44 [notice] 4388#8092: signal process started
+2020/02/15 12:43:54 [error] 7272#6536: *2 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/02/15 15:05:13 [notice] 7684#3344: signal process started
+2020/02/15 15:08:18 [error] 6408#10616: *10 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=ebay.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/"
+2020/02/15 17:50:20 [error] 6408#10616: *65 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=ebay.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/"
+2020/02/16 18:56:38 [error] 2112#7132: *1 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
