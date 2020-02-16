@@ -1,5 +1,0 @@
-<?php
-    function isValidStore($inputStore) {
-
-    }
-?>
