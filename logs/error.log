@@ -58,3 +58,23 @@
 2020/02/15 15:08:18 [error] 6408#10616: *10 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=ebay.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/"
 2020/02/15 17:50:20 [error] 6408#10616: *65 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=ebay.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/"
 2020/02/16 18:56:38 [error] 2112#7132: *1 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/02/16 19:15:33 [notice] 6676#10188: signal process started
+2020/02/16 19:16:28 [error] 2112#7132: *30 WSARecv() failed (10054: An existing connection was forcibly closed by the remote host) while reading response header from upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/"
+2020/02/16 19:17:34 [notice] 9556#5060: signal process started
+2020/02/16 19:23:05 [notice] 1412#1156: signal process started
+2020/02/20 06:27:20 [error] 10808#7516: *3 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/02/20 07:01:00 [notice] 1520#228: signal process started
+2020/02/20 20:07:32 [error] 3088#2788: *2 CreateFile() "C:\proxy_tz/src/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2020/02/20 20:25:42 [notice] 6968#68: signal process started
+2020/02/20 20:25:59 [notice] 8220#3264: signal process started
+2020/02/20 20:25:59 [error] 8220#3264: CreateFile() "C:\proxy_tz/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2020/02/20 20:34:10 [notice] 7104#5404: signal process started
+2020/02/20 20:44:20 [notice] 8784#5104: signal process started
+2020/02/20 20:44:41 [error] 7212#3508: *1 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /index.php?site=sears.com/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9123", host: "localhost", referrer: "http://localhost/"
+2020/02/20 22:18:28 [notice] 8512#2756: signal process started
+2020/02/20 22:27:48 [emerg] 7500#7672: unknown directive "s" in C:\proxy_tz/conf/nginx.conf:13
+2020/02/20 22:28:50 [emerg] 8652#8656: unknown directive "s" in C:\proxy_tz/conf/nginx.conf:13
+2020/02/20 22:29:32 [notice] 1296#7288: signal process started
+2020/02/20 22:29:32 [error] 1296#7288: CreateFile() "C:\proxy_tz/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2020/02/20 22:40:09 [emerg] 6356#8792: unknown directive "localhost" in C:\proxy_tz/conf/nginx.conf:33
+2020/02/20 22:40:11 [emerg] 7288#2584: unknown directive "localhost" in C:\proxy_tz/conf/nginx.conf:33

@@ -1,7 +1,11 @@
 <?php
-      require_once 'connectToProxy.php';
+      require_once 'SpiderClientDecorator.php';
+      require_once 'parser.php';
 
       error_reporting(0);
       $site = $_GET['site'];
-      connect($site);
+      $spider = new SpiderClientDecorator(new ParseCoupons);
+
+      $spider->checkDataInDBBeforeStart($site);
+      $spider->getData();
 ?>

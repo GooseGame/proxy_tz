@@ -10,6 +10,7 @@ body {
     font-size: 1.5rem;
     background-color:#222222;
 }
+
 #loading {
     border: white solid 1px;
     visibility: hidden;
@@ -31,6 +32,7 @@ body {
     background: transparent;
     transition: border-color 0.2s;
 }
+
 .formField:active {
     border-color: #fe89cf;
 }
@@ -46,9 +48,11 @@ body {
     border: none;
     font-size: 1.3rem;
 }
+
 .submitButton:hover {
     color: #fe89cf;
 }
+
 .submitButton:focus {
     outline-color: #fe89cf;
 }
@@ -59,32 +63,43 @@ body {
     margin: 30px;
     position: relative;
 }
+
 .placeholder {
     color: black;
     background-color: #fff;
-    float: left;
     margin-right: 5px;
 }
+
 .img {
-    float: left;
     margin-right: 5px;
     position: relative;
 }
+
 .title {
     color: white;
     padding-bottom: 30px;
 }
+
 .desc {
     padding-left: 15px;
 }
-.times {
+
+.left {
+    float: left;
+}
+
+.right {
     float: right;
+}
+
+.small {
     font-size: 0.8rem;
 }
 
 .btn:hover {
     color: #fe89cf;
 }
+
 .btn:focus {
     outline: none;
 }
