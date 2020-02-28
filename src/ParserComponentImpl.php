@@ -1,3 +1,7 @@
-interface ParserComponentImpl {
-    public function parse($data, $isServerMode);
-}
+<?php
+    namespace tz;
+
+    interface ParserComponentImpl {
+        function parse(string $rawHTML, bool $isServerMode);
+    }
+?>

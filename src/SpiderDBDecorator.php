@@ -1,5 +1,6 @@
 <?php
-    require_once 'Spider.php';
+    namespace tz;
+
     class SpiderDBDecorator extends SpiderDecorator {
         function getData() {
             return $this->parsedData;

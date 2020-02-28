@@ -2,5 +2,10 @@
     "require": {
         "guzzlehttp/guzzle": "^6.5",
         "paquettg/php-html-parser": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "tz\\": "src/"
+        }
     }
 }

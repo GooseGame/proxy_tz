@@ -1,11 +1,11 @@
 <?php
-      require_once 'SpiderClientDecorator.php';
-      require_once 'parser.php';
+    namespace tz;
 
-      error_reporting(0);
-      $site = $_GET['site'];
-      $spider = new SpiderClientDecorator(new ParseCoupons);
+    require_once __DIR__ . '/../vendor/autoload.php';
 
-      $spider->checkDataInDBBeforeStart($site);
-      $spider->getData();
+    $site = $_GET['site'];
+    $clientResponse = new ClientResponse;
+
+    $clientResponse->checkAndGetDataFromDB($site);
+    $clientResponse->echoJSONData();
 ?>
