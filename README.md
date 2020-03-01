@@ -24,3 +24,55 @@ Don't forget to uncomment some extensions from your php.ini file:
 #### Database
 You can easy import my DB schema by importDB.sql file.
 
+#### Configs
+I am using app.ini to keep some server info. In app.ini you can manage your own settings for DB, proxy, user agent, etc.
+
+#### Server
+I am using nginx, here is my example config.
+
+```
+  worker_processes  2;
+
+  events {
+      worker_connections  1024;
+  }
+
+  http {
+      include       mime.types;
+      default_type  application/octet-stream;
+      sendfile        on;
+      keepalive_timeout  65;
+
+      server {
+          listen       80;
+          server_name  localhost;
+          root   src;
+
+          location / {
+              index  index.html index.htm;
+          }
+
+          location ~ \.php$ {
+              include        fastcgi_params;
+              try_files $uri =404;
+              fastcgi_pass   127.0.0.1:9123;
+              fastcgi_index  index.php;
+              fastcgi_param  SCRIPT_FILENAME  /$document_root$fastcgi_script_name;
+              include fastcgi.conf;
+          }
+
+          location css {
+              root css;
+          }
+
+          location js {
+                  root js;
+              }
+
+          error_page   500 502 503 504  /50x.html;
+          location = /50x.html {
+              root   src;
+          }
+      }
+  }
+```  
