@@ -5,7 +5,7 @@
         private $db;
 
         function __construct() {
-            $this->db = new MySQLConnector();
+            $this->db = new DBConnector();
         }
 
         function deleteOverdueCoupons() {
@@ -27,7 +27,7 @@
                 return false;
             }
             $rows = array();
-            while ($row = $query->fetch_assoc()) {
+            while ($row = $this->db->fetch($query)) {
                 $rows[] = $row;
             }
 
@@ -42,7 +42,7 @@
             }
 
             $rows = array();
-            while ($row = $query->fetch_assoc()) {
+            while ($row = $this->db->fetch($query)) {
                 $rows[] = $row;
             }
 

@@ -1,7 +1,7 @@
 <?php
     namespace tz;
 
-    class MySQLConnector {
+    class DBConnector {
         private $db;
         private $config;
 
@@ -13,6 +13,10 @@
 
         function query(string $query) {
             return $this->db->query($query);
+        }
+
+        function fetch($query) {
+            return $query->fetch_assoc();
         }
     }
 ?>
