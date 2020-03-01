@@ -29,6 +29,7 @@ You can easy import my DB schema by importDB.sql file.
 
 #### Configs
 I am using app.ini to keep some server info. In app.ini you can manage your own settings for DB, proxy, user agent, etc.
+##### Dont forget to change it! 
 
 #### Server
 I am using nginx, here is my example config.
