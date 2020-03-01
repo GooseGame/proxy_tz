@@ -13,10 +13,11 @@
 * Frontend contains some native js with AJAX connection to server.
 
 ## Requirements
+
+##### PHP version - 7.4.2 (Maybe you can run it in older versions, but I didn't test that)
+
 #### libraries:
 All what you need is written in composer.json file, so just install composer to project and use json file.
-
-##### My PHP version - 7.4.2
 
 #### Extensions:
 Don't forget to uncomment some extensions from your php.ini file:
