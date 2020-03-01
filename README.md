@@ -16,6 +16,8 @@
 #### libraries:
 All what you need is written in composer.json file, so just install composer to project and use json file.
 
+##### My PHP version - 7.4.2
+
 #### Extensions:
 Don't forget to uncomment some extensions from your php.ini file:
 * curl
