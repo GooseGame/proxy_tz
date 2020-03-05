@@ -1,0 +1,13 @@
+.idea/
+conf/
+contrib/
+docs/
+logs/
+temp/
+vendor/
+.nginx
+.run_php
+.stop
+.trash
+*.lock
+.cronTask

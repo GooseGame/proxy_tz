@@ -1,0 +1,10 @@
+,
+    "autoload": {
+        "classmap": [
+            "src/index.php",
+            "src/updateDBInfo.php"
+        ],
+        "psr-4": {
+            "Src\\": "src"
+        }
+    }
