@@ -1,5 +1,5 @@
 <?php
-    namespace tz\src\parser;
+    namespace Parser;
 
     use PHPHtmlParser\Dom;
 

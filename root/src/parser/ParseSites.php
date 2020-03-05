@@ -1,5 +1,5 @@
 <?php
-    namespace tz\src\parser;
+    namespace Parser;
 
     use PHPHtmlParser\Dom;
 
@@ -7,7 +7,7 @@
         private $config;
 
         function __construct() {
-            $this->config = parse_ini_file('app.ini');
+            $this->config = parse_ini_file(__DIR__ . "/../app.ini");
         }
 
         function parse(string $rawHTML, bool $isServerMode) {

@@ -5,9 +5,10 @@ docs/
 logs/
 temp/
 vendor/
-.nginx
-.run_php
-.stop
-.trash
-*.lock
-.cronTask
+nginx.exe
+run_php.bat
+stop.bat
+trash.txt
+composer.lock
+cronTask.bat
+app.ini

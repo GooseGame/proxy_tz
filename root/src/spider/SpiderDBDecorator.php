@@ -1,5 +1,5 @@
 <?php
-    namespace tz\src\spider;
+    namespace Spider;
 
     class SpiderDBDecorator extends SpiderDecorator {
         function getData() {

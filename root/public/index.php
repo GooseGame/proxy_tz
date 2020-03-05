@@ -1,10 +1,8 @@
 <?php
-    namespace tz\public;
-
-    require_once __DIR__ . '/../vendor/autoload.php';
+    require_once __DIR__ . '/../../vendor/autoload.php';
 
     $site = $_GET['site'];
-    $clientResponse = new ClientResponse;
+    $clientResponse = new Db\ClientResponse;
 
     $clientResponse->checkAndGetDataFromDB($site);
     $clientResponse->echoJSONData();

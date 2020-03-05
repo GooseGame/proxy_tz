@@ -1,5 +1,5 @@
 <?php
-    namespace tz\db;
+    namespace Db;
 
     class ClientResponse {
         private $parsedData = false;

@@ -1,5 +1,5 @@
 <?php
-    namespace tz\src\spider;
+    namespace Spider;
 
     use GuzzleHttp\Client;
     use Guzzle\Http\Message\Request;
@@ -9,7 +9,7 @@
 
 
 
-    class SpiderDecorator implements ParserComponentImpl
+    class SpiderDecorator implements \Parser\ParserComponentImpl
     {
         private $config;
         private $rawContent;
@@ -18,8 +18,8 @@
         private $isServerMode;
         protected $parsedData = 0;
 
-        function __construct(ParserComponentImpl $component) {
-            $this->config = parse_ini_file('app.ini');
+        function __construct(\Parser\ParserComponentImpl $component) {
+            $this->config = parse_ini_file(__DIR__ . "/../app.ini");
             $this->component = $component;
         }
 
