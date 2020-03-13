@@ -2,98 +2,79 @@
 
 namespace Parser;
 
+use Katzgrau\KLogger\Logger;
 use PHPHtmlParser\Dom;
+use stringEncode\Exception;
 
 class ParseCoupons implements ParserComponentImpl
 {
+    private $logger;
+
+    public function __construct(Logger $logger)
+    {
+        $this->logger = $logger;
+    }
+
     public function parse(string $rawHTML)
     {
         $result = [];
         $dom = new Dom;
         $dom->load($rawHTML);
-        $couponBlock = $dom->getElementsByClass('coupons-detail-box');
+        $couponBlock = $dom->find('.coupons-detail-box.hide-on-mobile');
         foreach ($couponBlock as $coupon) {
-            #get data from Dom tree
-            $contentImage = $this->getContentImage($coupon);
-            $contentTitle = $this->getContentTitle($coupon);
-            $contentDesc = $this->getContentDesc($coupon);
-            $contentDate = $this->getContentDate($coupon);
-            $contentTimes = $this->getContentTimes($coupon);
+            #get data from Dom tree,
             #associate elements and merge
-            $title = array('title'=>$contentTitle);
-            $img = array('img_src'=>$contentImage);
-            $desc = array('desc'=>$contentDesc);
-            $times = array('times'=>$contentTimes);
-            $endDate = array('date'=>$contentDate);
-            $result[] = array_merge($title,$img,$desc,$times, $endDate);
+            $result[] = [
+                'title'=>$this->getContentTitle($coupon),
+                'img_src'=>$this->getContentImage($coupon),
+                'desc'=>$this->getContentDesc($coupon),
+                'times'=>$this->getContentTimes($coupon),
+                'date'=>$this->getContentDate($coupon)
+            ];
         }
-        echo "** Successfully parsed coupons" . PHP_EOL;
-        $result = $this->getUniqueCoupons($result);
-        return $result;
-    }
-
-    private function getUniqueCoupons($coupons): array
-    {
-        $result = array();
-        for ($i=0; $i<count($coupons); $i+=2) {
-            $result[] = $coupons[$i];
-        }
+        $this->logger->info("Successfully parsed coupons");
+        $this->logger->debug("Coupons: ", $result);
         return $result;
     }
 
     private function getContentImage($coupon): string
     {
-        $contentImage = $coupon
-            ->firstChild()
-            ->firstChild()
-            ->firstChild()->text;
+        $contentImage = $coupon->find('.counpon-sale-box-sale-text.counpon-sale-box-sale-single-text')->text;
         #if we have real image
         if (is_null($contentImage)) {
-            $contentImage = $coupon
-                ->firstChild()
-                ->firstChild()
-                ->firstChild()->src;
+            $contentImage = $coupon->find('.coupons-product-image-box img')->src;
+        }
+        if (is_null($contentImage)) {
+            throw new Exception("Cannot parse image");
         }
         return $contentImage;
     }
 
     private function getContentTitle($coupon): string
     {
-        $contentTitle = $coupon
-            ->firstChild()->nextSibling()->nextSibling()
-            ->firstChild();
-        $contentTitle = $this->goToSiblingIfHiddenElement($contentTitle);
-        $contentTitle = $contentTitle
-            ->firstChild()
-            ->firstChild()->text;
-
+        $contentTitle = $coupon->find('.couponTitle')->text;
+        if (is_null($contentTitle)) {
+            throw new Exception("Cannot parse title");
+        }
         return $contentTitle;
     }
 
     private function getContentDesc($coupon): string
     {
-        $contentDesc = $coupon
-            ->firstChild()->nextSibling()->nextSibling()
-            ->firstChild();
-        $contentDesc = $this->goToSiblingIfHiddenElement($contentDesc);
-        $contentDesc = $contentDesc->nextSibling()->nextSibling()->nextSibling()
-            ->firstChild()
-            ->firstChild()
-            ->firstChild()->text;
+        $contentDesc = $coupon->find('.coupon-description.coupon-readmore-fix-overflow div')->text;
+        if (is_null($contentDesc)) {
+            throw new Exception("Cannot parse description");
+        }
 
         return $contentDesc;
     }
 
     private function getContentDate($coupon): string
     {
-        $contentDate = $coupon
-            ->firstChild()->nextSibling()->nextSibling()
-            ->firstChild();
-        $contentDate = $this->goToSiblingIfHiddenElement($contentDate);
-        $contentDate = $contentDate->nextSibling()->nextSibling()->nextSibling()->nextSibling()
-            ->firstChild()->nextSibling()
-            ->firstChild()->nextSibling()
-            ->firstChild();
+        $contentDate = $coupon->find('.expire-row.hide-on-mobile div span')->text;
+        if (is_null($contentDate)) {
+            throw new Exception("Cannot parse date");
+        }
         #parsing leaves ' ' at [0]
         $contentDate = ltrim($contentDate, ' ');
         return $contentDate;
@@ -101,33 +82,12 @@ class ParseCoupons implements ParserComponentImpl
 
     private function getContentTimes($coupon): string
     {
-        $contentTimes = $coupon
-            ->firstChild()->nextSibling()->nextSibling()
-            ->firstChild();
-        $contentTimes = $this->goToSiblingIfHiddenElement($contentTimes);
-        $contentTimes = $contentTimes->nextSibling()->nextSibling()->nextSibling()->nextSibling()
-            ->firstChild()->nextSibling()->nextSibling()
-            ->firstChild()->nextSibling()
-            ->firstChild();
+        $contentTimes = $coupon->find('.used-times span')->text;
+        if (is_null($contentTimes)) {
+            throw new Exception("Cannot parse 'times' row");
+        }
         #parsing leaves ' ' at [0]
         $contentTimes = ltrim($contentTimes, ' ');
         return $contentTimes;
-    }
-
-    private function goToSiblingIfHiddenElement($element)
-    {
-        if (!$this->contains($element->nextSibling()->class, 'coupons-btn')) {
-            $element = $element->nextSibling();
-        }
-        return $element;
-    }
-
-    private function contains(string $str, string $pattern): bool
-    {
-        if (strpos($str, $pattern) !== false) {
-            return true;
-        } else {
-            return false;
-        }
     }
 }

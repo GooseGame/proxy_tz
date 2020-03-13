@@ -7,28 +7,29 @@ use Guzzle\Http\Message\Request;
 use Guzzle\Http\Message\Response;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
+use Katzgrau\KLogger\Logger;
 
 class ProxyConnector
 {
     private $config;
     private $rawContent;
     private $site;
+    private $logger;
     const MAX_TRIES = 30;
 
-    function __construct($config)
+    function __construct($config, Logger $logger)
     {
         $this->config = $config;
+        $this->logger = $logger;
     }
 
     function connectAndGetRawData(string $site): string
     {
         $this->site = $site;
-        echo 'trying to connect proxy: ';
+        $this->logger->info('Trying to connect proxy');
         for ($i=0; $i<self::MAX_TRIES; $i++) {
-            echo $i;
             $isConnected = $this->tryToConnectProxy($this->config['ip'], $this->config['port']);
             if ($isConnected) {
-                echo PHP_EOL;
                 return $this->rawContent;
             }
         }

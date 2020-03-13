@@ -7,13 +7,15 @@ const SERVER_ERROR_MESSAGE = "There are some problem here. Try to refresh site."
 header('Content-Type: application/json');
 
 try {
+    #initialise logger
+    $logger = new \Katzgrau\KLogger\Logger(__DIR__ . '/../../logs');
     #parse app.ini
     $config = parse_ini_file(__DIR__ . "/../src/app.ini");
     #check app.ini validity
     $validator = new \Validation\DataValidation;
     $validator->checkConfigValidation($config);
     #get 'site' attribute from client
-    $site = $_GET['site'];
+    $site = isset($_GET['site']) ? $_GET['site'] : null;
     #check site validity
     $validator->checkInputSiteValidation($site);
     #get shop id from db by site
@@ -24,9 +26,11 @@ try {
     #output result in json format
     echo json_encode($data);
 } catch (UnexpectedValueException $e) {
+    $logger->error($e->getMessage());
     $data = array('message' => SERVER_ERROR_MESSAGE);
     echo json_encode($data);
 } catch (Exception $e) {
+    $logger->error($e->getMessage());
     $data = array('message' => $e->getMessage());
     echo json_encode($data);
 }

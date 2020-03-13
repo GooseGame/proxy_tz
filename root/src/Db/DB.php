@@ -20,7 +20,6 @@ class DB
         $dt = new \DateTime();
         $now = $dt->format('Y-m-d');
         $query = $this->db->query('DELETE FROM coupons WHERE date < ' . $now);
-        echo "* successfully deleted overdue coupons" . PHP_EOL;
     }
 
     public function isShopExist(string $name): bool
@@ -103,14 +102,12 @@ class DB
             $result = $this->db->fetch($query);
 
             if (is_null($result)) {
-                print_r($item);
                 $stmt = $this->db->getInitializedStatement();
                 if ($this->db->prepare("INSERT INTO coupons (title, `desc`, img_src, times, shop_id, date) VALUES (?, ?, ?, ?, ?, ?)", $stmt)) {
                     $stmt->bind_param('ssssis', $item["title"], $item["desc"], $item["img_src"], $item["times"], $shop_id, $item["date"]);
                     $this->db->execute($stmt);
                 }
             }
-            exit;
         }
     }
 }
