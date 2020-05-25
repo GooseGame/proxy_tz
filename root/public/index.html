@@ -9,17 +9,25 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
     <link rel="manifest" href="images/site.webmanifest">
-<body>
-    <h1 class="gray">ENTER SITE OF COUPONS</h1>
+<body onload="checkIp()" class="primaryBGColor" id="body">
+    <div id="CategoriesSidebar" class="Sidebar thirdBGColor">
+        <button class="submitButton hovered black" onclick="hide()">_</button>
+    </div>
+    <div class="right">
+        <button class="secondaryColor submitButton" onclick="getThemes()">change theme</button>
+        <button id="themes" class="invisible submitButton secondaryColor" value="0">next style >></button>
+    </div>
+    <h1 class="secondaryColor">ENTER SITE OF COUPONS</h1>
+    <button id="chooseCategory" class="submitButton secondaryColor" onclick="redirect()">or choose category</button>
     <form enctype="text/plain">
         <p>
-            <a class="gray">www.coupons.com/coupon-codes/stores/</a>
-            <input placeholder="site" id="form" class="formField">
-            <button class="submitButton gray" onclick="getUserInput()">submit</button>
+            <a class="secondaryColor">www.coupons.com/coupon-codes/stores/</a>
+            <input placeholder="site" id="form" class="formField secondaryColor">
+            <button class="submitButton secondaryColor" onclick="getUserInput()">submit</button>
         </p>
         <div id="loading">
             <img src="images/loading.gif" width="75" height="75" alt="nope"/>
-            <a class="loadingDescription gray">Sorry for waiting. Server is trying to connect proxy)</a>
+            <a class="loadingDescription secondaryColor">Sorry for waiting. Server is trying to connect proxy)</a>
         </div>
         <div id="answer"></div>
     </form>

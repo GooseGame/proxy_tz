@@ -20,7 +20,11 @@ class ParseCoupons implements ParserComponentImpl
         $result = [];
         $dom = new Dom;
         $dom->load($rawHTML);
-        $couponBlock = $dom->find('.coupons-detail-box.hide-on-mobile');
+        if (!$this->isCategory) {
+            $couponBlock = $dom->find('.coupons-detail-box');
+        } else {
+            $couponBlock = $dom->find('.coupons-detail-box.flex-col-mobile.hide-on-mobile');
+        }
         foreach ($couponBlock as $coupon) {
             #get data from Dom tree,
             #associate elements and merge
@@ -38,15 +42,24 @@ class ParseCoupons implements ParserComponentImpl
     }
 
     private function getContentImage($coupon): string
-    {
-        $contentImage = $coupon->find('.counpon-sale-box-sale-text.counpon-sale-box-sale-single-text')->text;
+    {   
+        try {
+            $contentImage = $coupon->find('.counpon-sale-box-sale-text.counpon-sale-box-sale-single-text')->text;
+        } catch (\Exception $e) {
+            try {
+                $contentImage = $coupon->find('.coupons-product-image-box img')->src;
+            } catch (\Exception $e) {
+                throw new Exception("Cannot parse image");
+            }
+        }
+        
         #if we have real image
-        if (is_null($contentImage)) {
-            $contentImage = $coupon->find('.coupons-product-image-box img')->src;
-        }
-        if (is_null($contentImage)) {
-            throw new Exception("Cannot parse image");
-        }
+        // if (is_null($contentImage)) {
+        //     $contentImage = $coupon->find('.coupons-product-image-box img')->src;
+        // }
+        // if (is_null($contentImage)) {
+        //     throw new Exception("Cannot parse image");
+        // }
         return $contentImage;
     }
 

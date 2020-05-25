@@ -15,7 +15,7 @@ class ProxyConnector
     private $rawContent;
     private $site;
     private $logger;
-    const MAX_TRIES = 30;
+    const MAX_TRIES = 50;
 
     function __construct($config, Logger $logger)
     {

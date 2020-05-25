@@ -17,16 +17,32 @@ try {
 
     #connect to https://www.coupons.com/coupon-codes/ via proxy
     $proxy = new \Proxy\ProxyConnector($config, $logger);
-    $raw = $proxy->connectAndGetRawData($config['stores_handler']);
-    #parse data
-    $parser = new Parser\ParseSites($config['baseUrl'], $logger);
-    $shops = $parser->parse($raw);
-    #insert parsed data
-    $db->insertShops($shops);
-    $logger->info("Successfully inserted new shops");
-    #get full list of shops urls from db
-    $urls = $db->getListOfShopUrls();
-    #connect and insert coupons, using urls
+    // $raw = $proxy->connectAndGetRawData($config['stores_handler']);
+    // #parse data
+    // $parser = new Parser\ParseSites($config['baseUrl'], $logger);
+    // $shops = $parser->parse($raw);
+    // #insert parsed data
+    // $db->insertShops($shops);
+    // $logger->info("Successfully inserted new shops");
+
+    // $parser = new Parser\ParseCategories($config['baseUrl'], $logger);
+    // $shops = $parser->parse($raw);
+    // #insert parsed data
+    // $db->insertCategories($shops);
+    // $logger->info("Successfully inserted new categories");
+
+    // #get full list of shops urls from db
+    // $urls = $db->getListOfShopUrls();
+    // #connect and insert coupons, using urls
+    // foreach ($urls as $url) {
+    //     $raw = $proxy->connectAndGetRawData($url);
+    //     $parser = new Parser\ParseCoupons($logger);
+    //     $coupons = $parser->parse($raw);
+    //     $db->insertCoupons($coupons, $url);
+    //     $logger->info("Successfully inserted coupons from " . $url);
+    // }
+
+    $urls = $db->getListOfCategoryUrls();
     foreach ($urls as $url) {
         $raw = $proxy->connectAndGetRawData($url);
         $parser = new Parser\ParseCoupons($logger);
@@ -35,7 +51,7 @@ try {
         $logger->info("Successfully inserted coupons from " . $url);
     }
 
-} catch (Exception $e) {
+} catch (\Exception $e) {
     $logger->error($e->getMessage());
     exit;
 }
